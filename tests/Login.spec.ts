@@ -9,5 +9,9 @@ test('Login Page: Success', async ({ page }) => {
   await test.step('กรอก email', async() =>{
     await page.getByTestId('email-input').fill('user@company.com')
   });
+
+  await test.step('กรอก   password', async() =>{
+    await page.getByTestId('password-input').fill('Test1234!')
+  });
 });
 

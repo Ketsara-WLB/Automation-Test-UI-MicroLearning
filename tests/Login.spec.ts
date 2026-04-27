@@ -84,3 +84,22 @@ test('Login Page: Login  ไม่สำเร็จ Email ไม่ถูกต
     await expect(page.getByTestId('password-error')).toHaveText('Incorrect email or password.')
   });
 });
+
+test('Login Page: Login  ไม่สำเร็จ ไม่กรอก Email และ Password ', async ({ page }) => {
+  await test.step('เข้าสู่หน้าเว็บไซต์ ไปหน้า Login', async() =>{
+    await page.goto('/')
+    await page.getByRole('link', { name: 'Login Form Practice login'}).click()
+  });
+
+  await test.step('กดปุ่ม Sign in', async() =>{
+    await page.getByTestId('login-btn').click()
+  });
+
+  await test.step('ตรวจสอบ error emty email', async() =>{
+    await expect(page.getByTestId('email-error')).toHaveText('Please enter a valid email address.')
+  });
+
+  await test.step('ตรวจสอบ  error emty passsword', async() =>{
+    await expect(page.getByTestId('password-error')).toHaveText('Password is required.')
+  });
+});

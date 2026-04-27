@@ -18,6 +18,8 @@ test('Login Page: Success', async ({ page }) => {
     await page.getByTestId('login-btn').click()
   });
 
-
+  await test.step('ตรวจสอบ URL เท่ากันกับ https://ui-sandbox-omega.vercel.app/login/success', async() =>{
+    await expect(page).toHaveURL('/login/success')
+  });
 });
 

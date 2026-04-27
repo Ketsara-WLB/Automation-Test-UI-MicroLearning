@@ -10,8 +10,14 @@ test('Login Page: Success', async ({ page }) => {
     await page.getByTestId('email-input').fill('user@company.com')
   });
 
-  await test.step('กรอก   password', async() =>{
+  await test.step('กรอก password', async() =>{
     await page.getByTestId('password-input').fill('Test1234!')
   });
+
+  await test.step('กดปุ่ม Sign in', async() =>{
+    await page.getByTestId('login-btn').click()
+  });
+
+
 });
 

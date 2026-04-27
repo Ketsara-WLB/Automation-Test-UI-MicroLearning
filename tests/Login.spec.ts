@@ -21,5 +21,9 @@ test('Login Page: Success', async ({ page }) => {
   await test.step('ตรวจสอบ URL เท่ากันกับ https://ui-sandbox-omega.vercel.app/login/success', async() =>{
     await expect(page).toHaveURL('/login/success')
   });
+
+  await test.step('ตรวจสอบข้อความบนหน้าเว็บ Login successful', async() =>{
+    await expect(page.getByTestId('success-heading')).toHaveText('Login successful');
+  });
 });
 

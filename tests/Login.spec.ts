@@ -29,5 +29,9 @@ test('Login Page: Success', async ({ page }) => {
 
 
 test('Login Page: Login ไม่สำเร็จ password ไม่ถูกต้อง ', async ({ page }) => {
+  await test.step('เข้าสู่หน้าเว็บไซต์ ไปหน้า Login', async() =>{
+    await page.goto('/')
+    await page.getByRole('link', { name: 'Login Form Practice login'}).click()
+  });
 
 });

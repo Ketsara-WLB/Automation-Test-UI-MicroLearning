@@ -27,3 +27,7 @@ test('Login Page: Success', async ({ page }) => {
   });
 });
 
+
+test('Login Page: Login ไม่สำเร็จ password ไม่ถูกต้อง ', async ({ page }) => {
+
+});

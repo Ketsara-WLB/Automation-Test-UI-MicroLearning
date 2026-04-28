@@ -5,4 +5,9 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
     await page.goto('/')
     await page.getByRole('link', { name: 'Invoice Form'}).click()
   });
+
+  await test.step('เลือก Document type เป็น Receipt', async() =>{
+    await page.getByTestId('invoice-type-select').selectOption({label: 'Receipt'})
+  });
+
 });

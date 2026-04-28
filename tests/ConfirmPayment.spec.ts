@@ -2,8 +2,11 @@ import { test, expect } from '@playwright/test';
 import path from 'path';
 
 test('กรอก Payment confirmation Detail อัปโหลดไฟล์.jpgสำเร็จ', async ({ page }) => {
+    await test.step('เข้าสู่หน้าเว็บไซต์ https://ui-sandbox-omega.vercel.app', async () => {
+        await page.goto('/')
+    })
+    
     await test.step('ไปหน้า Confirm Payment', async () => {
-        await page.goto('https://ui-sandbox-omega.vercel.app');
         await page.getByRole('link', { name: 'Confirm Payment' }).click()
     })
     
@@ -12,7 +15,7 @@ test('กรอก Payment confirmation Detail อัปโหลดไฟล์
     })
     
     await test.step('ตรวจสอบการอัปโหลดรูป cat-1.jpg', async () => {
-        await expect(page.getByTestId('slip-remove')).toBeVisible()
+        await expect(page.getByTestId('slip-image-preview')).toBeVisible()
     })
 
     await test.step('กรอก Order ID เป็น 1234567890123456', async () => {

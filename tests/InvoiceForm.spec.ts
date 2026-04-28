@@ -39,4 +39,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('กด +Add item', async() =>{
     await page.getByTestId('add-row-button').click()
   });
+
+  await test.step('กรอก Item name เป็น E2E Automation Test via APIs', async() =>{
+    await page.getByTestId('row-2-name').fill('E2E Automation Test via APIs')
+  });
 });

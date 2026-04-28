@@ -25,4 +25,9 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('กรอก Unit price เป็น 2,000', async() =>{
     await page.getByTestId('row-1-unit-price').fill('2,000')
   });
+
+  await test.step('กรอก Qty เป็น 4', async() =>{
+    await page.getByTestId('row-1-qty').clear()
+    await page.getByTestId('row-1-qty').fill('4')
+  });
 });

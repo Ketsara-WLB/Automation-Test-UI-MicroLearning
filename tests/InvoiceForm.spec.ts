@@ -72,11 +72,15 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
 
   await test.step('เปลี่ยน Total เป็น 8,000.00', async() =>{
     await page.getByTestId('row-2-total').clear()
-    await page.getByTestId('row-2-total').fill('10,000')
+    await page.getByTestId('row-2-total').fill('8,000')
   });
 
   await test.step('ตรวจ Total เป็น 8,000.00', async() =>{
     await page.locator('body').click()
     await expect(page.getByTestId('row-2-total')).toHaveValue('8,000.00')
+  });
+
+  await test.step('ตรวจ Subtotal เป็น 14,880.00', async() =>{
+    await expect(page.getByTestId('summary-subtotal')).toHaveText('14,880.00')
   });
 });

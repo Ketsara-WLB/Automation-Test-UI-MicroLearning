@@ -95,5 +95,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('กด Submit document', async() =>{
     await page.getByTestId('submit-button').click()
   });
-  
+
+  await test.step('ตรวจสอบ URL เท่ากันกับ https://ui-sandbox-omega.vercel.app/invoice/success', async() =>{
+    await expect(page).toHaveURL('/invoice/success')
+  });
 });

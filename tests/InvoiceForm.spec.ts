@@ -10,4 +10,7 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
     await page.getByTestId('invoice-type-select').selectOption({label: 'Receipt'})
   });
 
+  await test.step('กรอก Item name เป็น C-Level Consulting', async() =>{
+    await page.getByTestId('row-1-name').fill('C-Level Consulting')
+  });
 });

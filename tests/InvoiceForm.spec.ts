@@ -47,4 +47,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('กรอก Category เป็น Main', async() =>{
     await page.getByTestId('row-2-category').fill('Main')
   });
+
+  await test.step('เลือก Maintenance', async() =>{
+    await page.getByTestId('row-2-category-option-0').click()
+  });
 });

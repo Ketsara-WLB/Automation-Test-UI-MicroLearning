@@ -35,4 +35,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
     await page.locator('body').click()
     await expect(page.getByTestId('row-1-total')).toHaveValue('8,000.00')
   });
+
+  await test.step('กด +Add item', async() =>{
+    await page.getByTestId('add-row-button').click()
+  });
 });

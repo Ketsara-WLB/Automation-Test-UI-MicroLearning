@@ -104,3 +104,7 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
     await expect(page.getByTestId('success-heading')).toHaveText('Submit Invoice Successful')
   });
 });
+
+test('กรอก Receipt จำนวน 3 ชิ้น และ ลบสินค้า 1 ชิ้นสำเร็จ', async ({ page }) => {
+
+});

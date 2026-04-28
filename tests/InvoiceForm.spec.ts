@@ -83,4 +83,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('ตรวจ Subtotal เป็น 14,880.00', async() =>{
     await expect(page.getByTestId('summary-subtotal')).toHaveText('14,880.00')
   });
+
+  await test.step('ตรวจ VAT (7%) เป็น 1,120.00', async() =>{
+    await expect(page.getByTestId('summary-vat')).toHaveText('1,120.00')
+  });
 });

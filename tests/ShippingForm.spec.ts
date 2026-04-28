@@ -85,14 +85,31 @@ test('Confirm Shipping ไม่สำเร็จ ไม่กรอก Shippin
     await page.getByTestId('shipping-submit').click()
   });
   
-  await test.step('ตรวจสอบข้อความ error', async () => {
+  await test.step('ตรวจสอบข้อความ First name error เมื่อไม่ได้กรอก First name จะแสดงข้อความ First name is required.', async () => {
     await expect(page.getByTestId('shipping-form-first-name-error')).toHaveText('First name is required.')
+  });
+
+  await test.step('ตรวจสอบข้อความ Last name error เมื่อไม่ได้กรอก Last name จะแสดงข้อความ Last name is required.', async () => {
     await expect(page.getByTestId('shipping-form-last-name-error')).toHaveText('Last name is required.')
+  });
+
+  await test.step('ตรวจสอบข้อความ Phone number error เมื่อไม่ได้กรอก Phone number จะแสดงข้อความ Phone number is required.', async () => {
     await expect(page.getByTestId('shipping-form-phone-error')).toHaveText('Phone number is required.')
-    await expect(page.getByTestId('shipping-form-address-error')).toHaveText('Address is required.')
-    await expect(page.getByTestId('shipping-form-province-error')).toHaveText('Please select a province.')
-    await expect(page.getByTestId('shipping-form-district-error')).toHaveText('Please select a district.')
-    await expect(page.getByTestId('shipping-form-subdistrict-error')).toHaveText('Please select a subdistrict.')
   });
   
+  await test.step('ตรวจสอบข้อความ Address error เมื่อไม่ได้กรอก Address จะแสดงข้อความ Address is required.', async () => {
+    await expect(page.getByTestId('shipping-form-address-error')).toHaveText('Address is required.')
+  });
+
+  await test.step('ตรวจสอบข้อความ Province error เมื่อไม่ได้ระบุ Province จะแสดงข้อความ Please select a province.', async () => {
+    await expect(page.getByTestId('shipping-form-province-error')).toHaveText('Please select a province.')
+  });
+
+  await test.step('ตรวจสอบข้อความ District error เมื่อไม่ได้ระบุ District จะแสดงข้อความ Please select a district.', async () => {
+    await expect(page.getByTestId('shipping-form-district-error')).toHaveText('Please select a district.')
+  });
+
+  await test.step('ตรวจสอบข้อความ Subdistrict error เมื่อไม่ได้ระบุ Subdistrict จะแสดงข้อความ Please select a subdistrict.', async () => {
+    await expect(page.getByTestId('shipping-form-subdistrict-error')).toHaveText('Please select a subdistrict.')
+  });
 })

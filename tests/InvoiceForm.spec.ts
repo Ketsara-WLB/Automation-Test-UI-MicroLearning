@@ -13,4 +13,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('กรอก Item name เป็น C-Level Consulting', async() =>{
     await page.getByTestId('row-1-name').fill('C-Level Consulting')
   });
+
+  await test.step('กรอก Category เป็น Con', async() =>{
+    await page.getByTestId('row-1-category').fill('Con')
+  });
 });

@@ -64,4 +64,9 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
     await page.getByTestId('row-2-qty').clear()
     await page.getByTestId('row-2-qty').fill('1')
   });
+
+  await test.step('ตรวจ Total เป็น 10,000.00', async() =>{
+    await page.locator('body').click()
+    await expect(page.getByTestId('row-2-total')).toHaveValue('10,000.00')
+  });
 });

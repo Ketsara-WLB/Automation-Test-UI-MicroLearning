@@ -21,4 +21,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('เลือก Consulting', async() =>{
     await page.getByTestId('row-1-category-option-0').click()
   });
+
+  await test.step('กรอก Unit price เป็น 2,000', async() =>{
+    await page.getByTestId('row-1-unit-price').fill('2,000')
+  });
 });

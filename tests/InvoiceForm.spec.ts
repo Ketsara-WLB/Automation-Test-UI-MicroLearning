@@ -91,4 +91,9 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('ตรวจ Grand total เป็น 16,000.00', async() =>{
     await expect(page.getByTestId('summary-grand-total')).toHaveText('16,000.00')
   });
+
+  await test.step('กด Submit document', async() =>{
+    await page.getByTestId('submit-button').click()
+  });
+  
 });

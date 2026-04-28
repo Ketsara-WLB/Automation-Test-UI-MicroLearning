@@ -51,4 +51,8 @@ test('กรอก Receipt จำนวน 2 ชิ้น สำเร็จ', a
   await test.step('เลือก Maintenance', async() =>{
     await page.getByTestId('row-2-category-option-0').click()
   });
+
+  await test.step('กรอก Unit price เป็น 10,000', async() =>{
+    await page.getByTestId('row-2-unit-price').fill('10,000')
+  });
 });
